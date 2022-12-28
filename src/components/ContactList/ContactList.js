@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 import { getContacts, deleteContact } from 'redux/contactsSlice';
-//import { getContacts } from 'redux/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from 'redux/filtersSlice';
-//import { getFilter } from 'redux/store';
 
 export function ContactList() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+  console.log('contactsList = ', contacts);
   const filter = useSelector(getFilter);
 
   const onFilterChange = () => {
@@ -16,7 +15,6 @@ export function ContactList() {
       c.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
-
   const onDeleteContact = e => {
     dispatch(deleteContact(e.currentTarget.id));
   };

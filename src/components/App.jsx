@@ -7,9 +7,25 @@ import { getContacts } from 'redux/contactsSlice';
 
 export function App() {
   const contacts = useSelector(getContacts);
-  
+  console.log('contactsApp = ', contacts);
       return (
       <Container>
+        <h1>Phonebook</h1>
+        <ContactForm />
+        <h2>Contacts</h2>
+        
+          <Filter />
+        
+          <ContactList />
+        
+          <p>Your phonebook is empty. Please add contact.</p>
+        
+      </Container>
+    );
+}
+
+/*
+<Container>
         <h1>Phonebook</h1>
         <ContactForm />
         <h2>Contacts</h2>
@@ -22,5 +38,4 @@ export function App() {
           <p>Your phonebook is empty. Please add contact.</p>
         )}
       </Container>
-    );
-}
+      */

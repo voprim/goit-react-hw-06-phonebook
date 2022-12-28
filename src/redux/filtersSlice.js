@@ -23,7 +23,7 @@ const persistConfig = {
 };
 
 export const { setFilter } = filtersSlice.actions;
-export const getFilter = state => state.filters.filters;
+export const getFilter = state => state;
 export const filterReducer = persistReducer(
   persistConfig,
   filtersSlice.reducer
