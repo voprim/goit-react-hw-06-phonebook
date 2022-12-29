@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
 import css from './Filter.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { setFilter, getFilter } from 'redux/filtersSlice';
+import { useDispatch } from 'react-redux';
+import { setFilter } from 'redux/filtersSlice';
 
 export function Filter() {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
 
   const onChange = e => {
     dispatch(setFilter(e.target.value));
@@ -17,7 +16,7 @@ export function Filter() {
       <input
         className={css.input}
         type="text"
-        value={filter}
+        name="filter"
         onChange={onChange}
       />
     </label>
@@ -26,5 +25,7 @@ export function Filter() {
 
 Filter.propTypes = {
   value: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  //onChange: PropTypes.func.isRequired,
 };
+
+// value={filter}

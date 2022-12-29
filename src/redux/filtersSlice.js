@@ -11,8 +11,10 @@ const filtersSlice = createSlice({
   initialState: initialStateFilters,
 
   reducers: {
-    setFilter(state, action) {
-      state.filter = action.payload.toLowerCase();
+    setFilter: {
+      reducer(state, action) {
+        state.filter = action.payload.toLowerCase();
+      },
     },
   },
 });
@@ -23,7 +25,7 @@ const persistConfig = {
 };
 
 export const { setFilter } = filtersSlice.actions;
-export const getFilter = state => state;
+export const getFilter = state => state.filter.filter;
 export const filterReducer = persistReducer(
   persistConfig,
   filtersSlice.reducer
