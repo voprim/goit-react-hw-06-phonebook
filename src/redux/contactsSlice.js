@@ -26,17 +26,17 @@ const contactsSlice = createSlice({
 
       state.contacts.push(contact);
     },
-    /*deleteContact: {
+    deleteContact: {
       reducer(state, action) {
         state.contacts = state.contacts.filter(e => e.id !== action.payload);
       },
-    },*/
-    deleteContact: {
+    },
+    /*deleteContact: {
       reducer(state, action) {
         const index = state.contacts.findIndex(e => e.id === action.payload);
         state.contacts.splice(index, 1);
       },
-    },
+    },*/
   },
 });
 

@@ -24,7 +24,12 @@ export function ContactList() {
           <p className={css.info}>
             {name}: {number}
           </p>
-          <button className={css.btn} type="button" onClick={onDeleteContact}>
+          <button
+            className={css.btn}
+            type="button"
+            id={id}
+            onClick={onDeleteContact}
+          >
             Delete
           </button>
         </li>
